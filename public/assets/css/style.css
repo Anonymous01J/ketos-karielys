@@ -1,0 +1,318 @@
+/* assets/css/style.css */
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.btn-primary {
+    background-color: #004085;
+    border-color: #004085;
+}
+
+.btn-primary:hover {
+    background-color: #002752;
+    border-color: #002752;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    transition: 0.2s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — MEDIAQUERIES
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Tablet grande (≤ 992px) ─────────────────────────────── */
+@media (max-width: 992px) {
+
+    /* Header: ocultar etiquetas de texto en nav y reducir padding */
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    /* Tarjetas del dashboard: ocupar mitad del espacio */
+    .col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Tablas: permitir scroll horizontal */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Modales: más anchos en tablet */
+    .modal-xl {
+        max-width: 95%;
+    }
+
+    .modal-lg {
+        max-width: 90%;
+    }
+
+    /* Botones de acción en tablas: más compactos */
+    .btn-sm {
+        padding: 0.2rem 0.45rem;
+        font-size: 0.78rem;
+    }
+
+    /* Sección de alertas de stock */
+    .card-header.d-flex {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start !important;
+    }
+}
+
+/* ── Tablet pequeña (≤ 768px) ────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Contenedor principal */
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    /* Tarjetas del dashboard: una por fila */
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Encabezado de páginas: apilar título y botón */
+    .d-flex.justify-content-between.align-items-center {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 0.75rem;
+    }
+
+    /* Botones de acción al tope de páginas */
+    .d-flex.justify-content-between.align-items-center .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Título principal de sección */
+    h2, h3 {
+        font-size: 1.3rem;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+    }
+
+    /* Grupo de botones (Nuevo Producto, Registrar Entrada…) */
+    .container.mt-4 > .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5rem !important;
+        margin-right: 0 !important;
+    }
+
+    /* Tabs de Bootstrap: scroll horizontal si no caben */
+    .nav-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        padding-bottom: 2px;
+    }
+
+    .nav-tabs .nav-link {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.7rem;
+    }
+
+    /* Modales: pantalla completa en móvil */
+    .modal-dialog {
+        margin: 0.5rem;
+        max-width: calc(100% - 1rem);
+    }
+
+    .modal-xl,
+    .modal-lg {
+        max-width: calc(100% - 1rem);
+    }
+
+    /* Filas dentro de modal: una columna */
+    .modal-body .row > [class*="col-md-"] {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* DataTables: controles arriba/abajo centrados */
+    div.dataTables_wrapper div.dataTables_length,
+    div.dataTables_wrapper div.dataTables_filter,
+    div.dataTables_wrapper div.dataTables_info,
+    div.dataTables_wrapper div.dataTables_paginate {
+        text-align: center;
+    }
+
+    div.dataTables_wrapper div.dataTables_filter input {
+        width: 140px;
+    }
+
+    /* Paginación centrada */
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        justify-content: center !important;
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+
+    /* Acordeón de acciones en tabla de productos */
+    .accordion-button {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    /* Flex de botones de acción dentro del acordeón */
+    .accordion-body .d-flex.gap-1 {
+        flex-wrap: wrap;
+    }
+
+    .accordion-body .btn {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    /* Alertas de stock en dashboard */
+    .d-flex.align-items-center.gap-2.mb-3 {
+        flex-wrap: wrap;
+        gap: 0.4rem !important;
+    }
+
+    /* Tabla de alertas: ajustar columnas menos importantes */
+    .card-body .table th:nth-child(3),
+    .card-body .table td:nth-child(3) {
+        display: none;  /* ocultar "Precio" en móvil pequeño */
+    }
+
+    /* Imagen en tabla de productos */
+    .img-thumbnail {
+        width: 40px !important;
+    }
+
+    /* Resumen de totales en formularios de ingreso/venta */
+    #totalResumen,
+    #totalResumenVenta {
+        font-size: 0.9rem;
+        text-align: center !important;
+    }
+
+    /* Toasts: centrar y ancho completo */
+    .position-fixed.top-0.start-50.translate-middle-x {
+        left: 0 !important;
+        right: 0;
+        transform: none !important;
+        padding: 0.5rem !important;
+    }
+
+    .toast {
+        width: 100%;
+    }
+}
+
+/* ── Móvil pequeño (≤ 480px) ─────────────────────────────── */
+@media (max-width: 480px) {
+
+    /* Navbar */
+    .navbar-brand {
+        font-size: 0.9rem;
+        max-width: 60%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Reducir padding de cards */
+    .card {
+        padding: 0.6rem;
+    }
+
+    /* Panel principal: quitar padding excesivo */
+    .container.py-5 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    /* DataTables: select de longitud más pequeño */
+    div.dataTables_wrapper div.dataTables_length select {
+        width: 60px;
+    }
+
+    /* Badges de alerta en dashboard */
+    .badge.fs-6 {
+        font-size: 0.75rem !important;
+    }
+
+    /* Input de búsqueda DataTables */
+    div.dataTables_wrapper div.dataTables_filter input {
+        width: 110px;
+    }
+
+    /* Página de productos: quitar padding del container interno */
+    .container.bg-white.p-4 {
+        padding: 0.75rem !important;
+    }
+
+    /* Tabla interna de ingreso/venta múltiple */
+    #tbodyIngreso td,
+    #tbodyVenta td {
+        padding: 0.2rem 0.3rem;
+    }
+
+    #tbodyIngreso .form-control,
+    #tbodyVenta .form-control {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.3rem;
+    }
+
+    /* Select2 en móvil */
+    .select2-container {
+        min-width: 100px;
+        max-width: 140px;
+    }
+
+    /* Botón eliminar fila */
+    #tbodyIngreso .btn-danger,
+    #tbodyVenta .btn-danger {
+        padding: 0.15rem 0.35rem;
+        font-size: 0.75rem;
+    }
+
+    /* Tabla de alertas de stock: más columnas ocultas */
+    .card-body .table th:nth-child(4),
+    .card-body .table td:nth-child(4),
+    .card-body .table th:nth-child(5),
+    .card-body .table td:nth-child(5) {
+        display: none;
+    }
+
+    /* Información de rol/fecha */
+    .mt-4.text-muted small {
+        font-size: 0.7rem;
+    }
+}
+
+/* ── Print (ocultar nav y controles) ─────────────────────── */
+@media print {
+    .navbar,
+    .btn,
+    .accordion,
+    div.dataTables_wrapper div.dataTables_length,
+    div.dataTables_wrapper div.dataTables_filter,
+    div.dataTables_wrapper div.dataTables_paginate,
+    div.dataTables_wrapper div.dataTables_info {
+        display: none !important;
+    }
+
+    .table-responsive {
+        overflow: visible !important;
+    }
+}

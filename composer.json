@@ -1,0 +1,17 @@
+{
+    "name": "clientepc/kesto",
+    "description": "",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "clientepc\\kesto\\": "src/"
+        }
+    },
+    "authors": [
+        {
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {}
+}
